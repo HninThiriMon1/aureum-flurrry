@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your shopping cart at Fashionable Clothing Brand.">
+    <title>Shopping Cart - Fashionable Clothing Brand</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --light-beige: #fdf9ed;
+            --warm-beige: #e7d2b8;
+            --medium-brown: #926d49;
+            --dark-brown: #231613;
+            --muted-brown: #644842;
+        }
+
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-beige);
+            color: var(--dark-brown);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--dark-brown);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: var(--light-beige);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--warm-beige);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: var(--light-beige);
+        }
+
+        /* Cart Section */
+        .cart {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .cart h2 {
+            margin-top: 0;
+            font-size: 32px;
+            color: var(--dark-brown);
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: var(--warm-beige);
+        }
+
+        th, td {
+            border: 2px solid var(--muted-brown);
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--medium-brown);
+            color: var(--light-beige);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light-beige);
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid var(--muted-brown);
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        /* Total Price */
+        .total-price {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            margin-top: 20px;
+        }
+
+        .action-buttons button {
+            background-color: var(--medium-brown);
+            border: none;
+            color: var(--light-beige);
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: var(--muted-brown);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-brown);
+            color: var(--warm-beige);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: var(--warm-beige);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">FashionBrand</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Collections</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart">
+        <h2>Your Shopping Cart</h2>
+
+        <!-- Cart Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart Item 1 -->
+                <tr>
+                    <td><img src="https://images.unsplash.com/photo-1587746787310-86ec4d88a231?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGNhc2htaXJ8ZW58MHx8fHwxNjM2MTg2ODI1&ixlib=rb-1.2.1&q=80&w=80" alt="Casual T-Shirt"></td>
+                    <td>$19.99</td>
+                    <td><input type="number" value="2" class="quantity-input" min="1" onchange="updateSubtotal(this, 19.99)"></td>
+                    <td class="subtotal">$39.98</td>
+                    <td><button onclick="removeItem(this)">Remove</button></td>
+                </tr>
+                <!-- Cart Item 2 -->
+                <tr>
+                    <td><img src="https://images.unsplash.com/photo-1572011586834-1a4ab9e6b9e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEyfHxhZHZlcnRpc3R8ZW58MHx8fHwxNjM2MTg2ODQw&ixlib=rb-1.2.1&q=80&w=80" alt="Comfy Sweatpants"></td>
+                    <td>$29.99</td>
+                    <td><input type="number" value="1" class="quantity-input" min="1" onchange="updateSubtotal(this, 29.99)"></td>
+                    <td class="subtotal">$29.99</td>
+                    <td><button onclick="removeItem(this)">Remove</button></td>
+                </tr>
+                <!-- Cart Item 3 -->
+                <tr>
+                    <td><img src="https://images.unsplash.com/photo-1521865109640-13c8ff1f36e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDI4fHxiYWFraW5nJTIwcGFudHN8ZW58MHx8fHwxNjM2MTg2ODQ3&ixlib=rb-1.2.1&q=80&w=80" alt="Stylish Hoodie"></td>
+                    <td>$39.99</td>
+                    <td><input type="number" value="1" class="quantity-input" min="1" onchange="updateSubtotal(this, 39.99)"></td>
+                    <td class="subtotal">$39.99</td>
+                    <td><button onclick="removeItem(this)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-price">Total Price: $109.96</div>
+
+        <div class="action-buttons">
+            <button>Proceed to Checkout</button>
+            <button>Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Fashionable Clothing Brand. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <script>
+        function updateSubtotal(input, price) {
+            const quantity = parseInt(input.value);
+            const subtotal = (quantity * price).toFixed(2);
+            const subtotalElement = input.closest('tr').querySelector('.subtotal');
+            subtotalElement.innerText = `$${subtotal}`;
+
+            // Update total price
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            const items = document.querySelectorAll('.subtotal');
+            let total = 0;
+
+            items.forEach(item => {
+                const subtotal = parseFloat(item.innerText.replace('$', ''));
+                total += subtotal;
+            });
+
+            document.querySelector('.total-price').innerText = `Total Price: $${total.toFixed(2)}`;
+        }
+
+        function removeItem(button) {
+            const row = button.closest('tr');
+            row.remove();
+            updateTotalPrice();
+        }
+    </script>
+</body>
+</html>
+

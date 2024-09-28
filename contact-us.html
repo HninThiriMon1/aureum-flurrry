@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact page for Fashionable Clothing Brand.">
+    <title>Contact Us - Fashionable Clothing Brand</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --light-beige: #fdf9ed;
+            --warm-beige: #e7d2b8;
+            --medium-brown: #926d49;
+            --dark-brown: #231613;
+            --muted-brown: #644842;
+        }
+
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Garamond', serif; /* Classic font */
+            background-color: var(--light-beige);
+            color: var(--dark-brown);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--dark-brown);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid var(--medium-brown);
+        }
+
+        .navbar a {
+            color: var(--light-beige);
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--warm-beige);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-style: italic;
+            color: var(--light-beige);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Add space between items */
+        }
+
+        .contact h2 {
+            text-align: center;
+            color: var(--dark-brown);
+            width: 100%;
+            margin-bottom: 30px;
+            font-size: 32px;
+            border-bottom: 2px solid var(--medium-brown);
+            padding-bottom: 10px;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--warm-beige);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            flex: 1;
+            min-width: 300px;
+            margin: 20px 0; /* Spacing for cards */
+        }
+
+        /* Form Styles */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid var(--medium-brown);
+            border-radius: 5px;
+            font-family: 'Garamond', serif; /* Classic font */
+        }
+
+        /* Action Button */
+        .submit-button {
+            background-color: var(--medium-brown);
+            color: var(--light-beige);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            font-family: 'Garamond', serif; /* Classic font */
+        }
+
+        .submit-button:hover {
+            background-color: var(--muted-brown);
+        }
+
+        /* Google Map Container */
+        .map-container {
+            border: 5px solid var(--medium-brown);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+        }
+
+        /* Google Map */
+        .map {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-brown);
+            color: var(--warm-beige);
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: var(--warm-beige);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">FashionBrand</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Collections</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h2>Contact Us</h2>
+
+        <!-- Contact Form -->
+        <div class="card">
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Address Section -->
+        <div class="card">
+            <h3>Our Address</h3>
+            <p>123 Fashion Street,</p>
+            <p>City Name, State, ZIP</p>
+            <p>Country</p>
+            <p>Email: support@fashionbrand.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+
+        <!-- Google Map Container -->
+        <div class="card map-container">
+            <iframe 
+                class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.081192492947!2d-77.03687018467307!3d38.90719277957025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7c8e6f9a79f%3A0x8537f60e48aa1f8c!2s123%20Fashion%20Street%2C%20City%20Name%2C%20State%2C%20ZIP!5e0!3m2!1sen!2sus!4v1636619012671!5m2!1sen!2sus" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Fashionable Clothing Brand. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>
+

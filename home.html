@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fashionable Clothing Brand - Trendy and Modern Apparel">
+    <title>Fashionable Clothing Brand</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --light-beige: #fdf9ed;
+            --warm-beige: #e7d2b8;
+            --medium-brown: #926d49;
+            --dark-brown: #231613;
+            --muted-brown: #644842;
+        }
+
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-beige);
+            color: var(--dark-brown);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--dark-brown);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: var(--light-beige);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--warm-beige);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: var(--light-beige);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxjbG90aGluZ3xlbnwwfHx8fDE2MzYxNjE0ODU&ixlib=rb-1.2.1&q=80&w=1080'); /* Example background image */
+            background-size: cover;
+            background-position: center;
+            padding: 150px 20px;
+            text-align: center;
+            color: var(--light-beige);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px var(--dark-brown);
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .hero button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            background-color: var(--medium-brown);
+            color: var(--light-beige);
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .hero button:hover {
+            background-color: var(--warm-beige);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            font-size: 32px;
+            color: var(--dark-brown);
+        }
+
+        .section p {
+            line-height: 1.6;
+            margin: 0 15px;
+        }
+
+        /* Products Section */
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .product {
+            width: 30%;
+            margin: 15px;
+            background-color: var(--warm-beige);
+            border: 1px solid var(--muted-brown);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            margin: 0 15px 15px;
+            color: var(--dark-brown);
+        }
+
+        .product button {
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: var(--medium-brown);
+            border: none;
+            color: var(--light-beige);
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: var(--muted-brown);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-beige);
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 2px solid var(--muted-brown);
+            border-bottom: 2px solid var(--muted-brown);
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--warm-beige);
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .testimonials .testimonial {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid var(--muted-brown);
+            border-radius: 5px;
+            background-color: var(--light-beige);
+        }
+
+        .testimonials .testimonial h3 {
+            font-size: 20px;
+            color: var(--dark-brown);
+        }
+
+        /* Latest Blog Section */
+        .latest-blog {
+            padding: 50px 20px;
+        }
+
+        .latest-blog .blog-post {
+            margin: 15px;
+            padding: 20px;
+            border: 1px solid var(--muted-brown);
+            background-color: var(--light-beige);
+            text-align: left;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-brown);
+            color: var(--warm-beige);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: var(--warm-beige);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">FashionBrand</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Collections</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero">
+        <h1>Discover Your Style</h1>
+        <p>Elevate your wardrobe with our modern, trendy collections.</p>
+        <button>Shop the Latest Collection</button>
+        <button>Browse All Collections</button>
+    </div>
+
+    <!-- About Section -->
+    <div class="about section">
+        <h2>About Our Brand</h2>
+        <p>We are a clothing brand that believes in sustainable fashion. Our designs are crafted with love and precision, ensuring that every piece is a statement of elegance and quality. Join us on a journey of fashion that respects both people and the planet.</p>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="section">
+        <h2>Featured Products</h2>
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1555529669-6ddcdfc6e23c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGNsb3RoaW5nfGVufDB8fHx8MTYzNjE2MjExNg&ixlib=rb-1.2.1&q=80&w=400" alt="Product 1">
+                <h3>Classic Leather Jacket</h3>
+                <p>Perfect for all occasions, made with high-quality leather.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1568039725092-f05f1421e6ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGNsb3RoaW5nfGVufDB8fHx8MTYzNjE2MjExNg&ixlib=rb-1.2.1&q=80&w=400" alt="Product 2">
+                <h3>Elegant White Dress</h3>
+                <p>A timeless piece for your wardrobe, suitable for any event.</p>
+                <button>Buy Now</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1598300042247-00ec4d8d6345?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGNsb3RoaW5nfGVufDB8fHx8MTYzNjE2MjExNg&ixlib=rb-1.2.1&q=80&w=400" alt="Product 3">
+                <h3>Casual Sneakers</h3>
+                <p>Comfort meets style with these trendy sneakers.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <h3>Jane Doe</h3>
+            <p>"The quality of the clothes is exceptional, and they fit perfectly! I love shopping here!"</p>
+        </div>
+        <div class="testimonial">
+            <h3>John Smith</h3>
+            <p>"Amazing customer service and fast shipping. Highly recommended!"</p>
+        </div>
+    </div>
+
+    <!-- Latest Blog Section -->
+    <div class="latest-blog section">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-post">
+            <h3>5 Fashion Trends for 2024</h3>
+            <p>Discover the latest trends that will dominate the fashion scene this year.</p>
+        </div>
+        <div class="blog-post">
+            <h3>Sustainable Fashion: A Guide</h3>
+            <p>Learn how to make more sustainable choices in your wardrobe.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Fashionable Clothing Brand. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>
+

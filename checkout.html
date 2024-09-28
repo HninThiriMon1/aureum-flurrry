@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout page for Fashionable Clothing Brand.">
+    <title>Checkout - Fashionable Clothing Brand</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --light-beige: #fdf9ed;
+            --warm-beige: #e7d2b8;
+            --medium-brown: #926d49;
+            --dark-brown: #231613;
+            --muted-brown: #644842;
+        }
+
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-beige);
+            color: var(--dark-brown);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--dark-brown);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: var(--light-beige);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--warm-beige);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: var(--light-beige);
+        }
+
+        /* Checkout Section */
+        .checkout {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .checkout h2 {
+            text-align: center;
+            color: var(--dark-brown);
+        }
+
+        /* Form Styles */
+        form {
+            background-color: var(--warm-beige);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--muted-brown);
+            border-radius: 5px;
+        }
+
+        /* Summary Table */
+        .summary {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 2px solid var(--muted-brown);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--medium-brown);
+            color: var(--light-beige);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light-beige);
+        }
+
+        /* QR Code Section */
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Action Button */
+        .checkout-button {
+            background-color: var(--medium-brown);
+            color: var(--light-beige);
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .checkout-button:hover {
+            background-color: var(--muted-brown);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-brown);
+            color: var(--warm-beige);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: var(--warm-beige);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">FashionBrand</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Collections</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Checkout Section -->
+    <div class="checkout">
+        <h2>Checkout</h2>
+
+        <!-- Billing Information Form -->
+        <form>
+            <h3>Billing Information</h3>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Shipping Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="state">State/Province</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="zip">ZIP/Postal Code</label>
+            <input type="number" id="zip" name="zip" required>
+
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+                <option value="">Select your country</option>
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="myanmar">Myanmar</option>
+                <!-- Add more countries as needed -->
+            </select>
+        </form>
+
+        <!-- Order Summary Table -->
+        <h3>Your Order Summary</h3>
+        <table class="summary">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample Cart Item -->
+                <tr>
+                    <td>Casual T-Shirt</td>
+                    <td>$19.99</td>
+                    <td>2</td>
+                    <td>$39.98</td>
+                </tr>
+                <tr>
+                    <td>Comfy Sweatpants</td>
+                    <td>$29.99</td>
+                    <td>1</td>
+                    <td>$29.99</td>
+                </tr>
+                <tr>
+                    <td>Stylish Hoodie</td>
+                    <td>$39.99</td>
+                    <td>1</td>
+                    <td>$39.99</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-price" style="text-align: right; font-weight: bold;">Total: $109.96</div>
+
+        <!-- QR Code Section -->
+        <div class="qr-code">
+            <h3>Scan to Pay</h3>
+            <div id="qrcode"></div>
+        </div>
+
+        <!-- Checkout Button -->
+        <button class="checkout-button">Complete Purchase</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Fashionable Clothing Brand. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // URL to encode in the QR code (could be a payment link or confirmation page)
+            const paymentURL = "https://your-payment-link.com";
+            // Generate QR code
+            $('#qrcode').qrcode({
+                text: paymentURL,
+                width: 128,
+                height: 128,
+            });
+        });
+    </script>
+</body>
+</html>
+

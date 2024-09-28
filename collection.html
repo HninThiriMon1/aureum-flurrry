@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our stylish collections at Fashionable Clothing Brand.">
+    <title>Collections - Fashionable Clothing Brand</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --light-beige: #fdf9ed;
+            --warm-beige: #e7d2b8;
+            --medium-brown: #926d49;
+            --dark-brown: #231613;
+            --muted-brown: #644842;
+        }
+
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-beige);
+            color: var(--dark-brown);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--dark-brown);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: var(--light-beige);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: var(--warm-beige);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: var(--light-beige);
+        }
+
+        /* Collection Banner */
+        .collection-banner {
+            background-image: url('https://images.unsplash.com/photo-1583943021967-c15a8dca3e0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDgxfHxjbG90aGluZ3xlbnwwfHx8fDE2MzYxNzM1NDE&ixlib=rb-1.2.1&q=80&w=1080'); /* Example background image */
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: var(--light-beige);
+        }
+
+        .collection-banner h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px var(--dark-brown);
+        }
+
+        /* Collection Section */
+        .collections {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .collections h2 {
+            margin-top: 0;
+            font-size: 32px;
+            color: var(--dark-brown);
+        }
+
+        .collection {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .collection-item {
+            width: 30%;
+            margin: 15px;
+            background-color: var(--warm-beige);
+            border: 1px solid var(--muted-brown);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .collection-item:hover {
+            transform: scale(1.05);
+        }
+
+        .collection-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .collection-item h3 {
+            margin: 10px 0;
+            color: var(--dark-brown);
+            font-size: 24px;
+        }
+
+        .collection-item p {
+            margin: 0 15px 15px;
+            color: var(--dark-brown);
+        }
+
+        .collection-item button {
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: var(--medium-brown);
+            border: none;
+            color: var(--light-beige);
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .collection-item button:hover {
+            background-color: var(--muted-brown);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-brown);
+            color: var(--warm-beige);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: var(--warm-beige);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">FashionBrand</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Collections</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Collection Banner -->
+    <div class="collection-banner">
+        <h1>Explore Our Collections</h1>
+        <p>Discover unique styles crafted just for you.</p>
+    </div>
+
+    <!-- Collections Section -->
+    <div class="collections">
+        <h2>Our Featured Collections</h2>
+        <div class="collection">
+            <!-- Collection 1 -->
+            <div class="collection-item">
+                <img src="https://images.unsplash.com/photo-1586201732272-d2b07ae47d62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGFjY2Vzc29yaWVzfGVufDB8fHx8MTYzNjE3NDE4Mw&ixlib=rb-1.2.1&q=80&w=400" alt="Classic Collection">
+                <h3>Classic Collection</h3>
+                <p>A timeless selection of classic styles for every occasion.</p>
+                <button>Shop Now</button>
+            </div>
+            <!-- Collection 2 -->
+            <div class="collection-item">
+                <img src="https://images.unsplash.com/photo-1567950595171-10c75285bcaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fHByb21vdGlvbnxlbnwwfHx8fDE2MzYxNzQyMzQ&ixlib=rb-1.2.1&q=80&w=400" alt="Summer Collection">
+                <h3>Summer Collection</h3>
+                <p>Bright and airy styles that keep you cool and chic.</p>
+                <button>Shop Now</button>
+            </div>
+            <!-- Collection 3 -->
+            <div class="collection-item">
+                <img src="https://images.unsplash.com/photo-1500801992028-536114c297f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGZhdGlnfGVufDB8fHx8MTYzNjE3NDI0Ng&ixlib=rb-1.2.1&q=80&w=400" alt="Fall Collection">
+                <h3>Fall Collection</h3>
+                <p>Cozy and stylish pieces perfect for autumn vibes.</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Fashionable Clothing Brand. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>
+
